@@ -6,6 +6,7 @@ body{
   font-family: Ubuntu;
   margin: 0px;
   min-height: calc(100vh);
+  font-size: 0.8rem;
 }
 
 canvas{
@@ -18,9 +19,9 @@ canvas{
 
 input{
   border-radius: 15px;
-  margin: 30px auto;  
-  width: 400px;
-  height: 40px;
+  margin: 30px auto;
+  width: 250px;
+  height: 30px;
 	background-color:rgb(252, 252, 252);
   border: 0px;
 	display:block;
@@ -39,4 +40,16 @@ input:hover {
 .header{
   padding:20px;
   margin: 0px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin-bottom: 15px;
+  transition: .2s;
+  font-style: italic;
+}
+a:hover{
+  color: #5cbf2a;
 }

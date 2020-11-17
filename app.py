@@ -27,7 +27,8 @@ alphabet = np.array(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
 
 # from predictions, return the letter guessed
 def alph_res(pred):
-    return alphabet[pred == max(pred)][0]
+    res = alphabet[pred == max(pred)][0]
+    return res.upper()
 
 # from base64_string of image, get data
 def stringToImage(base64_string):
