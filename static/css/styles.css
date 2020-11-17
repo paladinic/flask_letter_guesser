@@ -1,0 +1,42 @@
+body{
+  text-align: center;
+  background-image: linear-gradient(to bottom right, rgb(81, 21, 91), rgb(10, 0, 88));
+  color: white;
+  padding: 0px;
+  font-family: Ubuntu;
+  margin: 0px;
+  min-height: calc(100vh);
+}
+
+canvas{
+  display: block;
+  border: 1px solid gray;
+  margin: auto;
+  background-color: white;
+  border-radius: 15px;
+}
+
+input{
+  border-radius: 15px;
+  margin: 30px auto;  
+  width: 400px;
+  height: 40px;
+	background-color:rgb(252, 252, 252);
+  border: 0px;
+	display:block;
+	cursor:pointer;
+	color: black;
+	text-decoration:none;
+  transition: .2s;
+  font-size: 1.2em;
+  outline: none;
+}
+input:hover {
+	background-color:#5cbf2a;
+  color: white;
+}
+
+.header{
+  padding:20px;
+  margin: 0px;
+}
