@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'dotty';
+  src: url('../fonts/cursed-timer-ulil-font/CursedTimerUlil-Aznm.ttf') format('truetype');
+  /* src: url('../fonts/dotty/dotty.ttf') format('truetype'); */
+}
+
 body{
   text-align: center;
   background-image: linear-gradient(to bottom right, rgb(81, 21, 91), rgb(10, 0, 88));
@@ -24,21 +30,30 @@ body{
 }
 
 
+.subrow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.subrow input{
+  width: 180px;
+}
+
 canvas{
   display: block;
   border: 1px solid gray;
   margin: auto;
   background-color: white;
-  border-radius: 15px;
-    box-shadow: 5px -3px rgba(0,0,0,1);
+  border-radius: 25%;
+  box-shadow: 5px -3px rgba(0,0,0,1);
 }
 
 input{
   box-shadow: 5px -3px rgba(0,0,0,1);
   border-radius: 15px;
-  margin: 30px auto;
+  margin: 15px auto;
   width: 400px;
-  height: 45px;
+  height: 40px;
 	background-color:rgb(252, 252, 252);
   border: 0px;
 	display:block;
@@ -51,15 +66,71 @@ input{
   outline: none;
 }
 input:hover {
-	background-color: #c9a0ff;
+	background-color: rgba(255, 0, 84,1);
   color: white;
-  box-shadow: 0 0  rgba(0,0,0,1);
+
+}
+
+input:active{
+  background-color: rgba(255, 255, 255,0.5);
+  color: black;
+}
+
+input#fit:hover{
+  color: white;
+  background-color: rgba(11, 223, 0,1);
+  box-shadow: 0px 0px 0px 1000px rgba(255,255,255,0.9);
+}
+input#notfit:hover{
+  color: white;
+  background-color: rgba(233, 11, 0,1);
+  box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.91);
+}
+input#go:hover{
+  color: white;
+  background-color: rgba(85, 120, 250, 1);
+}
+
+
+
+input#fit:active{
+  background-color: rgba(255, 255, 255,1);
+  color: rgb(231, 231, 231);
+}
+.glow {
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0px 0px  25px rgba(0,255,200,0.8);
+  }
+  to {
+      text-shadow: 0 0 5px rgba(0,255,200,0.5)
+  }
 }
 
 h1{
   text-shadow: 5px -3px rgba(0,0,0,1);
-  font-size: 3em;
+  font-size: 2em;
 }
+#result{
+  font-size: 3em
+}
+#result_span{
+  color: rgba(11, 223, 0,1);
+
+  transition: .2s;
+  font-family: 'dotty';
+  /* font-size: 2em; */
+}
+#result_span:hover{
+  color: rgba(0, 0, 0,1);
+  text-shadow: 0px 0px  20px rgba(255,255,255,1);
+}
+
 
 a{
   text-decoration: none;

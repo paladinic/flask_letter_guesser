@@ -6,6 +6,7 @@ import cv2
 from PIL import Image
 import io
 import base64
+import os
 
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
 
-alphabet = np.array(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"])
+alphabet = np.char.upper(np.array(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]))
 
 def alph_res(pred):
     return alphabet[pred == max(pred)][0]
@@ -60,5 +61,23 @@ def result():
 
     return jsonify(result=res)
 
+
+@app.route('/_fit')
+def fit():
+    url = request.args.get('img_url', "",type=str)
+
+    data = url.replace("ONEPLUS","+").replace   ("ONEEQUALS","=").replace("ONESLASH","/")
+    data = data.replace("ONEPLUS","+").replace("ONEEQUALS","=").replace("ONESLASH","/")
+
+    img = base64_to_img(data)
+    imgs = np.array([img])
+    pred = letter_model.predict(imgs)
+
+    letter_model.fit(imgs,pred)
+    print('model fitted')
+    return ""
+
+
 if __name__ == '__main__':
-  app.run(debug = True, port=5000, host="0.0.0.0")
+    port = int(os.environ.get('PORT', 5000))
+    app.run(port = port, host="0.0.0.0")

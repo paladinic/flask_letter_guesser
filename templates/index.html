@@ -26,9 +26,17 @@
       </div>
       <div class="column">
         <h1 >Letter Guesser</h1>
-        <input type="submit" value="Clear Canvas" onclick="clearCanvas(canvas,ctx);">
-        <input id="go" type="submit" value="Guess Letter" onclick="go()">
-        <h1 id="result">Reuslt</h1>
+        <input id='clear' type="submit" value="Clear" onclick="clearing()">
+        <input id="go" type="submit" value="Guess" onclick="go()">
+        <div class="subrow">
+          <div class="subcol">
+            <input id="fit" type="submit" value="✔ Correct" onclick="fit()">
+          </div>
+          <div class="subcol">
+            <input id="notfit" type="submit" value="✘ Incorrect" onclick="clearing()">
+          </div>
+        </div>
+        <h1 id="result">Reuslt <span class='glow' id='result_span'></span> </h1>
       </div>
     </div>
   </div>

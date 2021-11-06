@@ -60,6 +60,7 @@ function clearCanvas(canvas, ctx) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+
 // Keep track of the mouse button being pressed and draw a dot at current location
 function sketchpad_mouseDown() {
   mouseDown = 1;
@@ -169,8 +170,24 @@ function go() {
       img_url: img_url
     },
     function(data) {
-      $("#result").text("Result - "+data.result);
+      $("#result_span").text(data.result);
     });
+  return false;
+}
+
+function fit(){
+  clearing();
+  var img_url = get_image_url();
+  $.getJSON($SCRIPT_ROOT + '/_fit', {
+      img_url: img_url
+    },
+    function(data) {});
+  return false;
+}
+
+function clearing(){
+  clearCanvas(canvas, ctx);
+  $("#result_span").text("");
   return false;
 }
 
